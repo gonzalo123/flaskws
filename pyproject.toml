@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "flaskws"
+version = "0.1.0"
+description = ""
+authors = ["Gonzalo Ayuso <gonzalo123@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+flask = "^3.0.3"
+flask-socketio = "^5.3.6"
+redis = "^5.0.4"
+requests = "^2.31.0"
+pydantic = "^2.7.1"
+gunicorn = "^22.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^7.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
