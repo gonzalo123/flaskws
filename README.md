@@ -1,15 +1,13 @@
-# Flask and websockets using Flask-SocketIO
+# Creating a Real-Time Flask Application with Flask-SocketIO and Redis
 
-Today we're going to create a simple Flask application with real time communication. We're going to use websocket 
-with the SocketIO library. This library has an implementation for Python and Flask with [Flask-SocketIO]
-(https://flask-socketio.readthedocs.io/). My idea is the following one. Websockets are bidirectional, but I only want 
-to use the server to client communication within the websocket. For client to server I prefer to use the traditional 
-HTTP communication. My application is going to have session based authentication. To simulate the login I have 
-created a route called /login that creates a session. The idea is to use this authentication also for the websockets.
-One important thing for me, in fact that's the main purpose of this post, is to allow sending websockets from outside 
-the web application. Imagine for example that I want to send websockets to the client from a crontab or an external 
-service. To do that we need to use a message queue to help SocketIO to communicate between web a client application. 
-We're going to use a Redis server.
+Today, we're going to create a simple Flask application with real-time communication using websockets and the 
+SocketIO library. We'll leverage the [Flask-SocketIO](https://flask-socketio.readthedocs.io/) extension for integration.
+
+Here's the plan: while websockets support bidirectional communication, we'll use them exclusively for server-to-client messages. For client-to-server interactions, we'll stick with traditional HTTP communication.
+
+Our application will include session-based authentication. To simulate login, we've created a route called /login that establishes a session. This session-based authentication will also apply to our websocket connections.
+
+A key objective of this tutorial is to enable sending websocket messages from outside the web application. For instance, you might want to send messages from a cron job or an external service. To achieve this, we'll use a message queue to facilitate communication between the SocketIO server and the client application. We'll utilize Redis as our message queue.
 
 That's the main application
 
