@@ -113,8 +113,7 @@ That's the html template
 </body>
 </html>
 ```
-The register_ws function binds SocketIO to our Flask server. To allow sending messages outside our Flask application 
-we need to create our socketio instance in two different ways. To do that I've created this ws.py file. Note: I'm using Pydantic for validate the http requests 
+The register_ws function binds SocketIO to our Flask server. To enable sending messages from outside our Flask application, we need to instantiate SocketIO in two different ways. For this purpose, I've created a ws.py file. Note: I'm using Pydantic to validate the HTTP requests.
 
 ```python
 import logging
@@ -178,7 +177,7 @@ def register_ws(
     return conf.socketio
 ```
 
-And now we cand emit an event from outside the Flask application
+Now, we can emit an event from outside the Flask application.
 
 ```python
 from lib.ws import emit_event, setup_ws
@@ -187,7 +186,7 @@ from settings import REDIS_HOST
 setup_ws(redis_host=REDIS_HOST)
 emit_event('message', 'Hi')
 ```
-The application needs a redis server. I set up the server using docker
+The application needs a Redis server. I set up the server using docker
 
 ```yaml
 services:
