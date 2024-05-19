@@ -40,7 +40,6 @@ def api():
     emit_event(data.channel, data.body)
 
     return dict(status=True)
-
 ```
 
 That's the html template
@@ -186,7 +185,7 @@ from settings import REDIS_HOST
 setup_ws(redis_host=REDIS_HOST)
 emit_event('message', 'Hi')
 ```
-The application needs a Redis server. I set up the server using docker
+The application needs a Redis server. I set up the server using docker.
 
 ```yaml
 services:
