@@ -56,4 +56,8 @@ def register_ws(
     def handle_disconnect():
         logger.debug('Client disconnected')
 
+    @conf.socketio.on_error_default
+    def default_error_handler(e):
+        logger.error(f"An error occurred: {e}")
+
     return conf.socketio

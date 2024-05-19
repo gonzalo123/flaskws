@@ -17,6 +17,7 @@ gunicorn = "^22.0.0"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^7.0.0"
+pytest = "^8.2.0"
 
 [build-system]
 requires = ["poetry-core"]
