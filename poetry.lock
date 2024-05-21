@@ -233,6 +233,21 @@ async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
 
 [[package]]
+name = "flask-pydantic"
+version = "0.12.0"
+description = "Flask extension for integration with Pydantic library"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "Flask-Pydantic-0.12.0.tar.gz", hash = "sha256:b80f18cc7efe332b47eafbae141541e9875777132ba30d7c95f9fef9bf2a6977"},
+    {file = "Flask_Pydantic-0.12.0-py3-none-any.whl", hash = "sha256:c80825d74eefa137d8d7f2396f6b376ee128329196d79eff1442bcfd816a6228"},
+]
+
+[package.dependencies]
+Flask = "*"
+pydantic = ">=2.0"
+
+[[package]]
 name = "flask-socketio"
 version = "5.3.6"
 description = "Socket.IO integration for Flask applications"
@@ -794,4 +809,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "jaraco.test", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "a1b91afb6d2e1aa5f61fd011f530a0dc352218612cca180dfc79adbfcbdb27ef"
+content-hash = "355cafa05ac01dfcbf9921f7d9da994f6545d981af8bdc1ed82873fc7060e00c"
