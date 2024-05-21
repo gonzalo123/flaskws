@@ -1,36 +1,16 @@
 import logging
-from typing import Dict, Any, Union
 
 from flask import session
+from flask_socketio import ConnectionRefusedError
 from flask_socketio import SocketIO
-from pydantic import BaseModel
+
+from lib.config import conf
 
 logger = logging.getLogger(__name__)
 
 
-class Conf:
-    def __init__(self, socketio=None):
-        self._socketio = socketio
-
-    @property
-    def socketio(self):
-        return self._socketio
-
-    @socketio.setter
-    def socketio(self, value):
-        self._socketio = value
-
-
-conf = Conf()
-
-
 def emit_event(channel, body):
     conf.socketio.emit(channel, body)
-
-
-class EmitWebsocketRequest(BaseModel):
-    channel: str
-    body: Union[Dict[str, Any], str]
 
 
 def setup_ws(redis_host, redis_port=6379):

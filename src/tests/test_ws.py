@@ -2,7 +2,8 @@ from unittest.mock import Mock
 
 import pytest
 
-from lib.ws import conf, emit_event, Conf
+from lib.config import Conf
+from lib.ws import conf, emit_event
 
 mock_socketio = Mock()
 

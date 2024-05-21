@@ -1,6 +1,7 @@
 from flask import Flask, render_template, session, request
 
-from lib.ws import register_ws, emit_event, EmitWebsocketRequest
+from lib.ws import register_ws, emit_event
+from lib.models import EmitWebsocketRequest
 from settings import REDIS_HOST, WS_PATH
 
 app = Flask(__name__)
